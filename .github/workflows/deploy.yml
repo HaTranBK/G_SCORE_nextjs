@@ -3,7 +3,7 @@ name: Deploy Frontend to Fly.io
 on:
   push:
     branches:
-      - main      # Đổi thành 'master' nếu branch chính của bạn là master
+      - ha_dev
 
 jobs:
   deploy:
