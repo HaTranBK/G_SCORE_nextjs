@@ -17,14 +17,14 @@ export default function ScoreDetail({
   isError,
   error,
 }: ScoreDetailProps) {
-  // Lọc lấy các môn học có điểm (không phải null)
+
   const validScores = data
     ? Object.entries(subjectLabels)
-        .map(([key, label]) => ({
-          label,
-          score: data[key as keyof StudentScoreResponse],
-        }))
-        .filter((item): item is { label: string; score: number } => item.score !== null)
+      .map(([key, label]) => ({
+        label,
+        score: data[key as keyof StudentScoreResponse],
+      }))
+      .filter((item): item is { label: string; score: number } => item.score !== null)
     : [];
 
   return (
@@ -80,12 +80,7 @@ export default function ScoreDetail({
                 <Col xs={12} sm={8} md={6} key={idx}>
                   <Card
                     bordered={false}
-                    className="bg-zinc-50 border border-zinc-100 rounded-lg shadow-xs hover:border-zinc-200 transition-all text-center h-32 flex flex-col justify-center"
-                    styles={{
-                      body: {
-                        padding: "12px",
-                      },
-                    }}
+                    className="bg-zinc-50 border border-zinc-100 rounded-lg shadow-xs hover:border-zinc-200 transition-all text-center p-3"
                   >
                     <Statistic
                       title={<span className="text-gray-500 text-sm font-medium">{item.label}</span>}
