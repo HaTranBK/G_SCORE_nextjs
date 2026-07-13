@@ -8,5 +8,6 @@ export const getStudentScoreDetail = async (
 ): Promise<StudentScoreResponse> => {
   const httpClientTS = await getHttpClientTS();
   const resp = await httpClientTS.get(`${API_URL}/${sbd}`);
-  return resp.data;
+  return resp.data.data;
 };
+

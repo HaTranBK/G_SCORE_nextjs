@@ -16,5 +16,5 @@ export const getTopStudents = async (
 ): Promise<TopStudentDto[]> => {
   const httpClientTS = await getHttpClientTS();
   const resp = await httpClientTS.get(API_URL, { params: { limit } });
-  return resp.data;
+  return resp.data.data;
 };
